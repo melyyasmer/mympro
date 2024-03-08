@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Roboto:wght@500;700&display=swap");
+:root {
+    --clr-text: hsl(0, 0%, 100%);
+  }
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    width: 100%;
+    height: 60vh;
+    background: url("adrar/copilotback3.jpg") center / cover no-repeat ;
+}
+header{
+    position:absolute;
+    width: 100%;
+}
+.navbar{
+    display: flex;
+    top: 10px;
+    padding: 22px 10px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 10px auto;
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    justify-content: space-between;
+}
+.navbar .menu-btn{
+    display: none;
+    color: black;
+    cursor: pointer;
+    font-size: 2.0rem;
+}
+.navbar .links ul{
+    display: flex;
+    gap: 40px;
+    margin-left: 20%;
+}
+.navbar .links ul .close-btn{
+    display: none;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.5rem;
+}
+.navbar .links a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.navbar .links a:hover{
+    color: blue;
+    border-bottom: 2px solid floralwhite;
+}
+/*---logo----*/
+.navbar .bimg {
+    width: 190px;
+    height: 48px;
+    border-radius: 60px;
+    overflow:hidden;
+    margin-right: 10px;
+    margin-top: 1px;
+    cursor: pointer;
+    position: relative;
+}
+.navbar .logo{
+    width: 210px;
+    height: 230px;
+    position: absolute;
+    margin-left: -10%;
+    margin-top:-48%;
+}
+/*----- btn login----*/
+.navbar .login-btn{
+   border: none;
+   outline: none;
+   color: white;
+   font-size: 10px;
+   font-weight: 600;
+   padding: 10px 18px;
+   border-radius: 3px;
+   cursor: pointer;
+   background: rgb(41, 144, 223);
+}
+/*--login---signup--*/
+.blur-bg-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:200%; 
+    opacity: 0; 
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+.show-popup .blur-bg-overlay{
+    opacity: 1; 
+    pointer-events: auto;
+}
+.form-popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 720px;
+    width: 80%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(20px);
+    border: 2px solid black;
+    transform: translate(-50%,-100%);
+}
+.show-popup .form-popup{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+.meriama{color:white; backdrop-filter: blur(15px);}
+.form-popup .form-box{
+    display: flex;
+}
+.form-box .form-details{
+    max-width: 330px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("login2.jpg") center / cover no-repeat;
+}
+.login .form-details{
+    background: url("login2.jpg") center / cover no-repeat;
+}
+.signup .form-details{
+    background: url("signup.jpg") center / cover no-repeat;
+}
+  .form-box h2{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-box .form-content{
+    width: 100%;
+    padding: 35px;
+}
+form .input-field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+form .input-field input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid #717171;
+}
+.input-field input:focus{
+    border-color: #00bcd4;
+}
+.input-field input:is(:focus, :valid){
+    padding: 20px 15px 0;
+}
+form .input-field label{
+    position: absolute;
+    top:27%;
+    left: 40px;
+    color: #717171;
+    pointer-events: none;
+    transform: translate(-50%);
+    transition: 0.2s ease;
+}
+.signup form .input-field label{
+    position: absolute;
+    top:27%;
+    left: 60px;
+    color: #717171;
+    pointer-events: none;
+    transform: translate(-50%);
+    transition: 0.2s ease;
+}
+form .input-field input:is(:focus, :valid) ~ label{
+    color: rgb(94, 166, 220);
+    font-size: 0.65rem;
+    transform: translate(-50%);
+}
+.form-box a{
+    color: rgb(223, 229, 234);
+    font-size: large;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+.form-box a:hover{
+    text-decoration: underline;
+}
+.form-box :where(.forgot-pass, .policy-text){
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: rgb(241, 245, 248);
+    font-size: large;
+}
+form button{
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: white;
+    cursor: pointer;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+form button:hover{
+    background: #0097a7;
+}
+.form-popup .close-btn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #464646;
+    cursor: pointer;
+}
+.form-popup .signup,
+.form-popup .show-signup .login{
+    display: none;
+}
+.form-popup .show-signup .signup{
+    display: flex;
+}
+.signup .policy-text{
+    display: flex;
+    align-items: center;
+}
+.signup .policy-text input{
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+/*---catre dimographique---*/
+.dimographmap{
+    position: absolute;
+    width: 750px;
+    height: 350px;
+    top: 30%;
+    margin-left: 20%;
+    margin-right: 50%;
+    background: #fff;
+    border: 2px solid #0074d9; /* Bleu */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(4, 74, 135, 0.5); /* Ombre légère */
+}
+.dimographie{
+    float: left;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+.dimographie p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.dimographie span{
+    font-size: 1.2rem;
+    color: red;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.mapadrar{
+    float: right;
+}
+iframe{
+    border-radius: 8px;
+    height: 346px;
+}
+.dimographmap:hover {
+    .dimographie{
+        opacity: 0;
+    }
+    iframe{
+        width: 746px;
+        margin-top: -39%;
+    }
+}
+/*contenu de wilaya
+.centenu-de-wilaya{
+    position: absolute;
+    top: 115%;
+}
+.fleche {
+    position: absolute;
+    width: 27px;
+    height: 60px;
+    background-color: #0074D9; /* Couleur de la flèche 
+    clip-path: polygon(100% 50%, 0% 0%, 0% 100%); 
+    margin-top: -42px;
+    margin-left: 300px;
+}
+.chapitre{
+    width: 320px;
+    height: 60px;
+    position: relative;
+    padding: 20px;
+    margin: 20px 20px;
+    background-color: #0074D9; 
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.8rem;
+    color: #fff;
+}
+.chapitre:hover{
+    background: #1a3adb;
+    .fleche{
+        background: #1a3adb;
+    }
+}
+.photo-slide{
+    width: 1000px;
+    margin-left: 15%;
+    margin-right: 50%;
+    align-items: center;
+    background: radial-gradient(circle, rgb(33, 50, 200) 5%, rgb(246, 242, 242) 60%);
+    border-radius: 20px;
+}
+.photo-slide h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    margin: 20px 0 10px;
+  }
+  .slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  .slide-list {
+    display: flex;
+
+  }
+  .slides {
+    display: flex;
+  }
+  
+  .slides .imgt {
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 20px;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+    margin: 0 30px;
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prev,
+  .next {
+    display: none; 
+  }
+  .dots-container {
+    display: flex;
+    margin: 10px 0;
+    margin-left: 35%;
+    padding: 10px;
+  }
+  
+  .dot {
+    height: 10px;
+    width: 10px;
+    background-color:#fff;
+    border-radius: 50%;
+    display: flex;
+    margin: 0 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .active {
+    background-color: #0b0909;
+  }*/
